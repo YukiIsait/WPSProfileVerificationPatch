@@ -35,9 +35,9 @@ jobs:
       - name: Rename
         run: |
           Rename-Item -Path x64/MainRelease/ncrypt.dll -NewName ncrypt64.dll
-          Rename-Item -Path MainRelease/ncrypt.dll -NewName ncrypt32.dll
+          Rename-Item -Path Win32/MainRelease/ncrypt.dll -NewName ncrypt32.dll
           Rename-Item -Path x64/PacketRelease/msi.dll -NewName msi64.dll
-          Rename-Item -Path PacketRelease/msi.dll -NewName msi32.dll
+          Rename-Item -Path Win32/PacketRelease/msi.dll -NewName msi32.dll
 
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -45,6 +45,6 @@ jobs:
           fail_on_unmatched_files: true
           files: |
             x64/MainRelease/ncrypt64.dll
-            MainRelease/ncrypt32.dll
+            Win32/MainRelease/ncrypt32.dll
             x64/PacketRelease/msi64.dll
-            PacketRelease/msi32.dll
+            Win32/PacketRelease/msi32.dll
