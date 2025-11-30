@@ -54,22 +54,14 @@ namespace WPSProfileVerificationPatch {
         std::optional<std::span<const uint8_t>> translation = VersionUtil::QueryVersionInfoValue(versionInfoData, "\\VarFileInfo\\Translation");
         if (!translation.has_value()) {
             // 没有找到 Translation，不进行 Hook
-#if defined WP_DEBUG
             throw std::runtime_error("Failed to find Translation in version info");
-#else
-            return;
-#endif
         }
         uint16_t langId = *reinterpret_cast<const uint16_t*>(translation->data());
         uint16_t codePage = *reinterpret_cast<const uint16_t*>(translation->data() + 2);
         std::optional<std::span<const uint8_t>> productName = VersionUtil::QueryVersionInfoValue(versionInfoData, std::format("\\StringFileInfo\\{:04x}{:04x}\\ProductName", langId, codePage));
         if (!productName.has_value() || productName->size() != 11 || std::memcmp(productName->data(), "WPS Office", 11) != 0) {
             // ProductName 不是 WPS Office，不进行 Hook
-#if defined WP_DEBUG
             throw std::runtime_error("ProductName is not WPS Office");
-#else
-            return;
-#endif
         }
         std::span<const uint8_t> data;
 #if defined WP_PACKET
@@ -79,11 +71,7 @@ namespace WPSProfileVerificationPatch {
             HMODULE module = ModuleUtil::GetHandle(std::nullopt);
             data = std::span<const uint8_t>(reinterpret_cast<const uint8_t*>(module), ModuleUtil::GetSizeOfMemory(module));
         } else {
-#if defined WP_DEBUG
             throw std::runtime_error("KRSAVerifyFileHook can only be installed in the installer module");
-#else
-            return;
-#endif
         }
 #elif defined WP_MAIN
         HMODULE module = ModuleUtil::GetSelfHandle();
@@ -97,28 +85,23 @@ namespace WPSProfileVerificationPatch {
             }
             data = std::span<const uint8_t>(reinterpret_cast<const uint8_t*>(krtModule), ModuleUtil::GetSizeOfMemory(krtModule));
         } else {
-#if defined WP_DEBUG
             throw std::runtime_error("KRSAVerifyFileHook can only be installed in the main module with krt.dll loaded");
-#else
-            return;
-#endif
         }
 #else
 #error "Either WP_PACKET or WP_MAIN must be defined"
 #endif
 #if defined WP_DEBUG
-        std::vector<const uint8_t*> matches = PatternUtil::FindPattern(data, pattern, 0, false, 2);
+        constexpr size_t maxMatches = 2;
 #else
-        std::vector<const uint8_t*> matches = PatternUtil::FindPattern(data, pattern, 0, false, 1);
+        constexpr size_t maxMatches = 1;
 #endif
+        std::vector<const uint8_t*> matches = PatternUtil::FindPattern(data, pattern, 0, false, maxMatches);
         if (matches.size() == 0) {
             throw std::runtime_error("Failed to find KRSAVerifyFile pattern");
         }
-#if defined WP_DEBUG
         if (matches.size() > 1) {
             throw std::runtime_error("Multiple KRSAVerifyFile pattern matches found");
         }
-#endif
         kRSAVerifyFile = reinterpret_cast<decltype(kRSAVerifyFile)>(matches[0]);
     }
 
@@ -129,7 +112,9 @@ namespace WPSProfileVerificationPatch {
         try {
             UpdateKRSAVerifyFileAddress(); // 只有这里会抛出异常
         } catch (const std::exception& exception) {
+#if defined WP_DEBUG
             MessageBoxA(nullptr, exception.what(), "Hook Failed", MB_ICONSTOP);
+#endif
             return;
         }
         if (kRSAVerifyFile == nullptr) {
