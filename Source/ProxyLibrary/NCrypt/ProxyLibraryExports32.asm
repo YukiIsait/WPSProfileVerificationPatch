@@ -27,325 +27,463 @@ BCryptCreateContext endp
 BCryptCreateHash proc
     jmp symbolAddressArray+24
 BCryptCreateHash endp
-BCryptDecrypt proc
+BCryptCreateMultiHash proc
     jmp symbolAddressArray+28
+BCryptCreateMultiHash endp
+BCryptDecapsulate proc
+    jmp symbolAddressArray+32
+BCryptDecapsulate endp
+BCryptDecrypt proc
+    jmp symbolAddressArray+36
 BCryptDecrypt endp
 BCryptDeleteContext proc
-    jmp symbolAddressArray+32
+    jmp symbolAddressArray+40
 BCryptDeleteContext endp
 BCryptDeriveKey proc
-    jmp symbolAddressArray+36
+    jmp symbolAddressArray+44
 BCryptDeriveKey endp
 BCryptDeriveKeyCapi proc
-    jmp symbolAddressArray+40
+    jmp symbolAddressArray+48
 BCryptDeriveKeyCapi endp
 BCryptDeriveKeyPBKDF2 proc
-    jmp symbolAddressArray+44
+    jmp symbolAddressArray+52
 BCryptDeriveKeyPBKDF2 endp
 BCryptDestroyHash proc
-    jmp symbolAddressArray+48
+    jmp symbolAddressArray+56
 BCryptDestroyHash endp
 BCryptDestroyKey proc
-    jmp symbolAddressArray+52
+    jmp symbolAddressArray+60
 BCryptDestroyKey endp
 BCryptDestroySecret proc
-    jmp symbolAddressArray+56
+    jmp symbolAddressArray+64
 BCryptDestroySecret endp
 BCryptDuplicateHash proc
-    jmp symbolAddressArray+60
+    jmp symbolAddressArray+68
 BCryptDuplicateHash endp
 BCryptDuplicateKey proc
-    jmp symbolAddressArray+64
+    jmp symbolAddressArray+72
 BCryptDuplicateKey endp
+BCryptEncapsulate proc
+    jmp symbolAddressArray+76
+BCryptEncapsulate endp
 BCryptEncrypt proc
-    jmp symbolAddressArray+68
+    jmp symbolAddressArray+80
 BCryptEncrypt endp
 BCryptEnumAlgorithms proc
-    jmp symbolAddressArray+72
+    jmp symbolAddressArray+84
 BCryptEnumAlgorithms endp
 BCryptEnumContextFunctionProviders proc
-    jmp symbolAddressArray+76
+    jmp symbolAddressArray+88
 BCryptEnumContextFunctionProviders endp
 BCryptEnumContextFunctions proc
-    jmp symbolAddressArray+80
+    jmp symbolAddressArray+92
 BCryptEnumContextFunctions endp
 BCryptEnumContexts proc
-    jmp symbolAddressArray+84
+    jmp symbolAddressArray+96
 BCryptEnumContexts endp
 BCryptEnumProviders proc
-    jmp symbolAddressArray+88
+    jmp symbolAddressArray+100
 BCryptEnumProviders endp
 BCryptEnumRegisteredProviders proc
-    jmp symbolAddressArray+92
+    jmp symbolAddressArray+104
 BCryptEnumRegisteredProviders endp
 BCryptExportKey proc
-    jmp symbolAddressArray+96
+    jmp symbolAddressArray+108
 BCryptExportKey endp
 BCryptFinalizeKeyPair proc
-    jmp symbolAddressArray+100
+    jmp symbolAddressArray+112
 BCryptFinalizeKeyPair endp
 BCryptFinishHash proc
-    jmp symbolAddressArray+104
+    jmp symbolAddressArray+116
 BCryptFinishHash endp
 BCryptFreeBuffer proc
-    jmp symbolAddressArray+108
+    jmp symbolAddressArray+120
 BCryptFreeBuffer endp
 BCryptGenRandom proc
-    jmp symbolAddressArray+112
+    jmp symbolAddressArray+124
 BCryptGenRandom endp
 BCryptGenerateKeyPair proc
-    jmp symbolAddressArray+116
+    jmp symbolAddressArray+128
 BCryptGenerateKeyPair endp
 BCryptGenerateSymmetricKey proc
-    jmp symbolAddressArray+120
+    jmp symbolAddressArray+132
 BCryptGenerateSymmetricKey endp
 BCryptGetFipsAlgorithmMode proc
-    jmp symbolAddressArray+124
+    jmp symbolAddressArray+136
 BCryptGetFipsAlgorithmMode endp
 BCryptGetProperty proc
-    jmp symbolAddressArray+128
+    jmp symbolAddressArray+140
 BCryptGetProperty endp
+BCryptHash proc
+    jmp symbolAddressArray+144
+BCryptHash endp
 BCryptHashData proc
-    jmp symbolAddressArray+132
+    jmp symbolAddressArray+148
 BCryptHashData endp
 BCryptImportKey proc
-    jmp symbolAddressArray+136
+    jmp symbolAddressArray+152
 BCryptImportKey endp
 BCryptImportKeyPair proc
-    jmp symbolAddressArray+140
+    jmp symbolAddressArray+156
 BCryptImportKeyPair endp
+BCryptKeyDerivation proc
+    jmp symbolAddressArray+160
+BCryptKeyDerivation endp
 BCryptOpenAlgorithmProvider proc
-    jmp symbolAddressArray+144
+    jmp symbolAddressArray+164
 BCryptOpenAlgorithmProvider endp
+BCryptProcessMultiOperations proc
+    jmp symbolAddressArray+168
+BCryptProcessMultiOperations endp
 BCryptQueryContextConfiguration proc
-    jmp symbolAddressArray+148
+    jmp symbolAddressArray+172
 BCryptQueryContextConfiguration endp
 BCryptQueryContextFunctionConfiguration proc
-    jmp symbolAddressArray+152
+    jmp symbolAddressArray+176
 BCryptQueryContextFunctionConfiguration endp
 BCryptQueryContextFunctionProperty proc
-    jmp symbolAddressArray+156
+    jmp symbolAddressArray+180
 BCryptQueryContextFunctionProperty endp
 BCryptQueryProviderRegistration proc
-    jmp symbolAddressArray+160
+    jmp symbolAddressArray+184
 BCryptQueryProviderRegistration endp
 BCryptRegisterConfigChangeNotify proc
-    jmp symbolAddressArray+164
+    jmp symbolAddressArray+188
 BCryptRegisterConfigChangeNotify endp
 BCryptRegisterProvider proc
-    jmp symbolAddressArray+168
+    jmp symbolAddressArray+192
 BCryptRegisterProvider endp
 BCryptRemoveContextFunction proc
-    jmp symbolAddressArray+172
+    jmp symbolAddressArray+196
 BCryptRemoveContextFunction endp
 BCryptRemoveContextFunctionProvider proc
-    jmp symbolAddressArray+176
+    jmp symbolAddressArray+200
 BCryptRemoveContextFunctionProvider endp
 BCryptResolveProviders proc
-    jmp symbolAddressArray+180
+    jmp symbolAddressArray+204
 BCryptResolveProviders endp
 BCryptSecretAgreement proc
-    jmp symbolAddressArray+184
+    jmp symbolAddressArray+208
 BCryptSecretAgreement endp
 BCryptSetAuditingInterface proc
-    jmp symbolAddressArray+188
+    jmp symbolAddressArray+212
 BCryptSetAuditingInterface endp
 BCryptSetContextFunctionProperty proc
-    jmp symbolAddressArray+192
+    jmp symbolAddressArray+216
 BCryptSetContextFunctionProperty endp
 BCryptSetProperty proc
-    jmp symbolAddressArray+196
+    jmp symbolAddressArray+220
 BCryptSetProperty endp
 BCryptSignHash proc
-    jmp symbolAddressArray+200
+    jmp symbolAddressArray+224
 BCryptSignHash endp
 BCryptUnregisterConfigChangeNotify proc
-    jmp symbolAddressArray+204
+    jmp symbolAddressArray+228
 BCryptUnregisterConfigChangeNotify endp
 BCryptUnregisterProvider proc
-    jmp symbolAddressArray+208
+    jmp symbolAddressArray+232
 BCryptUnregisterProvider endp
 BCryptVerifySignature proc
-    jmp symbolAddressArray+212
+    jmp symbolAddressArray+236
 BCryptVerifySignature endp
 GetIsolationServerInterface proc
-    jmp symbolAddressArray+216
+    jmp symbolAddressArray+240
 GetIsolationServerInterface endp
 GetKeyStorageInterface proc
-    jmp symbolAddressArray+220
+    jmp symbolAddressArray+244
 GetKeyStorageInterface endp
 GetSChannelInterface proc
-    jmp symbolAddressArray+224
+    jmp symbolAddressArray+248
 GetSChannelInterface endp
+NCryptCloseKeyProtector proc
+    jmp symbolAddressArray+252
+NCryptCloseKeyProtector endp
+NCryptCloseProtectionDescriptor proc
+    jmp symbolAddressArray+256
+NCryptCloseProtectionDescriptor endp
+NCryptCreateClaim proc
+    jmp symbolAddressArray+260
+NCryptCreateClaim endp
 NCryptCreatePersistedKey proc
-    jmp symbolAddressArray+228
+    jmp symbolAddressArray+264
 NCryptCreatePersistedKey endp
+NCryptCreateProtectionDescriptor proc
+    jmp symbolAddressArray+268
+NCryptCreateProtectionDescriptor endp
+NCryptDecapsulate proc
+    jmp symbolAddressArray+272
+NCryptDecapsulate endp
 NCryptDecrypt proc
-    jmp symbolAddressArray+232
+    jmp symbolAddressArray+276
 NCryptDecrypt endp
 NCryptDeleteKey proc
-    jmp symbolAddressArray+236
+    jmp symbolAddressArray+280
 NCryptDeleteKey endp
 NCryptDeriveKey proc
-    jmp symbolAddressArray+240
+    jmp symbolAddressArray+284
 NCryptDeriveKey endp
+NCryptDuplicateKeyProtectorHandle proc
+    jmp symbolAddressArray+288
+NCryptDuplicateKeyProtectorHandle endp
+NCryptEncapsulate proc
+    jmp symbolAddressArray+292
+NCryptEncapsulate endp
 NCryptEncrypt proc
-    jmp symbolAddressArray+244
+    jmp symbolAddressArray+296
 NCryptEncrypt endp
 NCryptEnumAlgorithms proc
-    jmp symbolAddressArray+248
+    jmp symbolAddressArray+300
 NCryptEnumAlgorithms endp
 NCryptEnumKeys proc
-    jmp symbolAddressArray+252
+    jmp symbolAddressArray+304
 NCryptEnumKeys endp
 NCryptEnumStorageProviders proc
-    jmp symbolAddressArray+256
+    jmp symbolAddressArray+308
 NCryptEnumStorageProviders endp
 NCryptExportKey proc
-    jmp symbolAddressArray+260
+    jmp symbolAddressArray+312
 NCryptExportKey endp
 NCryptFinalizeKey proc
-    jmp symbolAddressArray+264
+    jmp symbolAddressArray+316
 NCryptFinalizeKey endp
 NCryptFreeBuffer proc
-    jmp symbolAddressArray+268
+    jmp symbolAddressArray+320
 NCryptFreeBuffer endp
 NCryptFreeObject proc
-    jmp symbolAddressArray+272
+    jmp symbolAddressArray+324
 NCryptFreeObject endp
 NCryptGetProperty proc
-    jmp symbolAddressArray+276
+    jmp symbolAddressArray+328
 NCryptGetProperty endp
+NCryptGetProtectionDescriptorInfo proc
+    jmp symbolAddressArray+332
+NCryptGetProtectionDescriptorInfo endp
 NCryptImportKey proc
-    jmp symbolAddressArray+280
+    jmp symbolAddressArray+336
 NCryptImportKey endp
 NCryptIsAlgSupported proc
-    jmp symbolAddressArray+284
+    jmp symbolAddressArray+340
 NCryptIsAlgSupported endp
 NCryptIsKeyHandle proc
-    jmp symbolAddressArray+288
+    jmp symbolAddressArray+344
 NCryptIsKeyHandle endp
+NCryptKeyDerivation proc
+    jmp symbolAddressArray+348
+NCryptKeyDerivation endp
 NCryptNotifyChangeKey proc
-    jmp symbolAddressArray+292
+    jmp symbolAddressArray+352
 NCryptNotifyChangeKey endp
 NCryptOpenKey proc
-    jmp symbolAddressArray+296
+    jmp symbolAddressArray+356
 NCryptOpenKey endp
+NCryptOpenKeyProtector proc
+    jmp symbolAddressArray+360
+NCryptOpenKeyProtector endp
 NCryptOpenStorageProvider proc
-    jmp symbolAddressArray+300
+    jmp symbolAddressArray+364
 NCryptOpenStorageProvider endp
+NCryptProtectKey proc
+    jmp symbolAddressArray+368
+NCryptProtectKey endp
+NCryptProtectSecret proc
+    jmp symbolAddressArray+372
+NCryptProtectSecret endp
+NCryptQueryProtectionDescriptorName proc
+    jmp symbolAddressArray+376
+NCryptQueryProtectionDescriptorName endp
+NCryptRegisterProtectionDescriptorName proc
+    jmp symbolAddressArray+380
+NCryptRegisterProtectionDescriptorName endp
 NCryptSecretAgreement proc
-    jmp symbolAddressArray+304
+    jmp symbolAddressArray+384
 NCryptSecretAgreement endp
 NCryptSetAuditingInterface proc
-    jmp symbolAddressArray+308
+    jmp symbolAddressArray+388
 NCryptSetAuditingInterface endp
 NCryptSetProperty proc
-    jmp symbolAddressArray+312
+    jmp symbolAddressArray+392
 NCryptSetProperty endp
 NCryptSignHash proc
-    jmp symbolAddressArray+316
+    jmp symbolAddressArray+396
 NCryptSignHash endp
+NCryptStreamClose proc
+    jmp symbolAddressArray+400
+NCryptStreamClose endp
+NCryptStreamOpenToProtect proc
+    jmp symbolAddressArray+404
+NCryptStreamOpenToProtect endp
+NCryptStreamOpenToUnprotect proc
+    jmp symbolAddressArray+408
+NCryptStreamOpenToUnprotect endp
+NCryptStreamOpenToUnprotectEx proc
+    jmp symbolAddressArray+412
+NCryptStreamOpenToUnprotectEx endp
+NCryptStreamUpdate proc
+    jmp symbolAddressArray+416
+NCryptStreamUpdate endp
 NCryptTranslateHandle proc
-    jmp symbolAddressArray+320
+    jmp symbolAddressArray+420
 NCryptTranslateHandle endp
+NCryptUnprotectKey proc
+    jmp symbolAddressArray+424
+NCryptUnprotectKey endp
+NCryptUnprotectSecret proc
+    jmp symbolAddressArray+428
+NCryptUnprotectSecret endp
+NCryptVerifyClaim proc
+    jmp symbolAddressArray+432
+NCryptVerifyClaim endp
 NCryptVerifySignature proc
-    jmp symbolAddressArray+324
+    jmp symbolAddressArray+436
 NCryptVerifySignature endp
 SslChangeNotify proc
-    jmp symbolAddressArray+328
+    jmp symbolAddressArray+440
 SslChangeNotify endp
 SslComputeClientAuthHash proc
-    jmp symbolAddressArray+332
+    jmp symbolAddressArray+444
 SslComputeClientAuthHash endp
 SslComputeEapKeyBlock proc
-    jmp symbolAddressArray+336
+    jmp symbolAddressArray+448
 SslComputeEapKeyBlock endp
 SslComputeFinishedHash proc
-    jmp symbolAddressArray+340
+    jmp symbolAddressArray+452
 SslComputeFinishedHash endp
 SslComputeSessionHash proc
-    jmp symbolAddressArray+344
+    jmp symbolAddressArray+456
 SslComputeSessionHash endp
 SslCreateClientAuthHash proc
-    jmp symbolAddressArray+348
+    jmp symbolAddressArray+460
 SslCreateClientAuthHash endp
 SslCreateEphemeralKey proc
-    jmp symbolAddressArray+352
+    jmp symbolAddressArray+464
 SslCreateEphemeralKey endp
 SslCreateHandshakeHash proc
-    jmp symbolAddressArray+356
+    jmp symbolAddressArray+468
 SslCreateHandshakeHash endp
 SslDecrementProviderReferenceCount proc
-    jmp symbolAddressArray+360
+    jmp symbolAddressArray+472
 SslDecrementProviderReferenceCount endp
 SslDecryptPacket proc
-    jmp symbolAddressArray+364
+    jmp symbolAddressArray+476
 SslDecryptPacket endp
+SslDeriveSessionTicketKey proc
+    jmp symbolAddressArray+480
+SslDeriveSessionTicketKey endp
+SslDuplicateTranscriptHash proc
+    jmp symbolAddressArray+484
+SslDuplicateTranscriptHash endp
 SslEncryptPacket proc
-    jmp symbolAddressArray+368
+    jmp symbolAddressArray+488
 SslEncryptPacket endp
 SslEnumCipherSuites proc
-    jmp symbolAddressArray+372
+    jmp symbolAddressArray+492
 SslEnumCipherSuites endp
+SslEnumCipherSuitesEx proc
+    jmp symbolAddressArray+496
+SslEnumCipherSuitesEx endp
+SslEnumEccCurves proc
+    jmp symbolAddressArray+500
+SslEnumEccCurves endp
 SslEnumProtocolProviders proc
-    jmp symbolAddressArray+376
+    jmp symbolAddressArray+504
 SslEnumProtocolProviders endp
+SslExpandBinderKey proc
+    jmp symbolAddressArray+508
+SslExpandBinderKey endp
+SslExpandExporterMasterKey proc
+    jmp symbolAddressArray+512
+SslExpandExporterMasterKey endp
+SslExpandNextGenTrafficKey proc
+    jmp symbolAddressArray+516
+SslExpandNextGenTrafficKey endp
+SslExpandPreSharedKey proc
+    jmp symbolAddressArray+520
+SslExpandPreSharedKey endp
+SslExpandResumptionMasterKey proc
+    jmp symbolAddressArray+524
+SslExpandResumptionMasterKey endp
+SslExpandTrafficKeys proc
+    jmp symbolAddressArray+528
+SslExpandTrafficKeys endp
+SslExpandWriteKey proc
+    jmp symbolAddressArray+532
+SslExpandWriteKey endp
 SslExportKey proc
-    jmp symbolAddressArray+380
+    jmp symbolAddressArray+536
 SslExportKey endp
+SslExportKeyingMaterial proc
+    jmp symbolAddressArray+540
+SslExportKeyingMaterial endp
+SslExtractEarlyKey proc
+    jmp symbolAddressArray+544
+SslExtractEarlyKey endp
+SslExtractHandshakeKey proc
+    jmp symbolAddressArray+548
+SslExtractHandshakeKey endp
+SslExtractMasterKey proc
+    jmp symbolAddressArray+552
+SslExtractMasterKey endp
 SslFreeBuffer proc
-    jmp symbolAddressArray+384
+    jmp symbolAddressArray+556
 SslFreeBuffer endp
 SslFreeObject proc
-    jmp symbolAddressArray+388
+    jmp symbolAddressArray+560
 SslFreeObject endp
 SslGenerateMasterKey proc
-    jmp symbolAddressArray+392
+    jmp symbolAddressArray+564
 SslGenerateMasterKey endp
 SslGeneratePreMasterKey proc
-    jmp symbolAddressArray+396
+    jmp symbolAddressArray+568
 SslGeneratePreMasterKey endp
 SslGenerateSessionKeys proc
-    jmp symbolAddressArray+400
+    jmp symbolAddressArray+572
 SslGenerateSessionKeys endp
 SslGetCipherSuitePRFHashAlgorithm proc
-    jmp symbolAddressArray+404
+    jmp symbolAddressArray+576
 SslGetCipherSuitePRFHashAlgorithm endp
 SslGetKeyProperty proc
-    jmp symbolAddressArray+408
+    jmp symbolAddressArray+580
 SslGetKeyProperty endp
 SslGetProviderProperty proc
-    jmp symbolAddressArray+412
+    jmp symbolAddressArray+584
 SslGetProviderProperty endp
+SslGetSessionTicketProtectionHeaderSize proc
+    jmp symbolAddressArray+588
+SslGetSessionTicketProtectionHeaderSize endp
 SslHashHandshake proc
-    jmp symbolAddressArray+416
+    jmp symbolAddressArray+592
 SslHashHandshake endp
 SslImportKey proc
-    jmp symbolAddressArray+420
+    jmp symbolAddressArray+596
 SslImportKey endp
 SslImportMasterKey proc
-    jmp symbolAddressArray+424
+    jmp symbolAddressArray+600
 SslImportMasterKey endp
 SslIncrementProviderReferenceCount proc
-    jmp symbolAddressArray+428
+    jmp symbolAddressArray+604
 SslIncrementProviderReferenceCount endp
 SslLookupCipherLengths proc
-    jmp symbolAddressArray+432
+    jmp symbolAddressArray+608
 SslLookupCipherLengths endp
 SslLookupCipherSuiteInfo proc
-    jmp symbolAddressArray+436
+    jmp symbolAddressArray+612
 SslLookupCipherSuiteInfo endp
 SslOpenPrivateKey proc
-    jmp symbolAddressArray+440
+    jmp symbolAddressArray+616
 SslOpenPrivateKey endp
 SslOpenProvider proc
-    jmp symbolAddressArray+444
+    jmp symbolAddressArray+620
 SslOpenProvider endp
+SslProtectSessionTicket proc
+    jmp symbolAddressArray+624
+SslProtectSessionTicket endp
 SslSignHash proc
-    jmp symbolAddressArray+448
+    jmp symbolAddressArray+628
 SslSignHash endp
+SslUnprotectSessionTicket proc
+    jmp symbolAddressArray+632
+SslUnprotectSessionTicket endp
 SslVerifySignature proc
-    jmp symbolAddressArray+452
+    jmp symbolAddressArray+636
 SslVerifySignature endp
 end
